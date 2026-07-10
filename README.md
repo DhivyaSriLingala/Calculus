@@ -215,6 +215,9 @@ Together, these topics form the mathematical foundation of machine learning.
 4. **A derivative measures change with respect to one variable, while a gradient collects the partial derivatives for many variables into a vector.** A model with many weights therefore uses a gradient to determine how each weight affects the loss.
 5. **PyTorch accumulates gradients by default.** Calling `optimizer.zero_grad()` clears gradients from the previous training step so they are not unintentionally added to the new gradients.
 
+
+</details>
+
 ---
 
 **Main takeaway:** derivatives measure change, gradients show the direction of greatest increase, and gradient descent moves in the opposite direction to help a model learn.
