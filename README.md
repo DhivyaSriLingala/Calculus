@@ -225,6 +225,16 @@ Together, these topics form the mathematical foundation of machine learning.
 1. If the loss increases during training, what might that suggest about the learning rate?
 2. What does `loss.backward()` calculate?
 3. If the gradient at the current weight is negative, in which direction will gradient descent update the weight?
+4. What is the difference between a derivative and a gradient?
+5. Why must `optimizer.zero_grad()` be called during a PyTorch training loop?
+
+### Answers
+
+1. **The learning rate may be too high.** Large updates can overshoot the minimum, making training unstable and causing the loss to increase. An increasing loss can have other causes, but lowering the learning rate is a good first check.
+2. **`loss.backward()` computes the gradients of the loss with respect to every trainable model parameter.** PyTorch applies the chain rule backward through the computation graph and stores each result in the parameter's `.grad` attribute.
+3. **The weight increases.** The update rule is `w = w - learning_rate × gradient`. Subtracting a negative gradient adds a positive value to the weight.
+4. **A derivative measures change with respect to one variable, while a gradient collects the partial derivatives for many variables into a vector.** A model with many weights therefore uses a gradient to determine how each weight affects the loss.
+5. **PyTorch accumulates gradients by default.** Calling `optimizer.zero_grad()` clears gradients from the previous training step so they are not unintentionally added to the new gradients.
 
 ---
 
