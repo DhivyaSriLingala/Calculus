@@ -1,6 +1,6 @@
-# Day 3 — Calculus and Gradient Descent
+# Calculus and Gradient Descent
 
-![Day 3 — Calculus and Gradient Descent](Day-3.png)
+![Day 3 - Calculus and Gradient Descent](Day-3.png)
 
 Day 1 introduced how data is structured through linear algebra, and Day 2 explored uncertainty through probability. Day 3 focuses on the engine behind machine learning: **how a model learns from its mistakes and improves its predictions**.
 
@@ -128,7 +128,7 @@ optimizer.step()                       # Update parameters
 
 Most neural-network training scripts are variations of these five steps.
 
-## Mini-Project — Linear Regression from Scratch
+## Mini-Project - Linear Regression from Scratch
 
 The notebook builds a small model for data generated from:
 
@@ -196,29 +196,7 @@ The key idea is simple: a model learns by measuring its error, finding which dir
 
 Together, these topics form the mathematical foundation of machine learning.
 
-## LinkedIn Post
 
-> Most people think calculus becomes irrelevant after school—until they try to understand how machine learning learns.
->
-> A derivative answers one simple question: if I change the input slightly, how much does the output change?
->
-> In machine learning, the input can be a model weight and the output can be the loss. The derivative tells us whether changing that weight makes the model's error better or worse.
->
-> Real models have many weights, so we collect all their derivatives into a gradient. The gradient points toward the steepest increase in loss, and the model moves in the opposite direction:
->
-> `weight = weight - learning_rate × gradient`
->
-> That is gradient descent.
->
-> The learning rate determines the size of each step. Too high, and training may overshoot or diverge. Too low, and learning becomes painfully slow. A good value creates steady convergence.
->
-> Neural networks add one more key idea: the chain rule. Because a network is made of functions inside functions, gradients are passed backward through every layer. That process is backpropagation—and in PyTorch, `loss.backward()` performs it automatically.
->
-> From linear regression to large neural networks, the core loop remains the same: predict, measure the error, calculate gradients, update the weights, and repeat.
->
-> The mathematics is centuries old. What changed is the scale at which we can apply it.
->
-> #MachineLearning #DeepLearning #AI #Python #Calculus #NeuralNetworks #DataScience #AIEngineering
 
 ## Quick Knowledge Check
 
@@ -228,7 +206,8 @@ Together, these topics form the mathematical foundation of machine learning.
 4. What is the difference between a derivative and a gradient?
 5. Why must `optimizer.zero_grad()` be called during a PyTorch training loop?
 
-### Answers
+<details>
+<summary><strong>Answer key</strong></summary>
 
 1. **The learning rate may be too high.** Large updates can overshoot the minimum, making training unstable and causing the loss to increase. An increasing loss can have other causes, but lowering the learning rate is a good first check.
 2. **`loss.backward()` computes the gradients of the loss with respect to every trainable model parameter.** PyTorch applies the chain rule backward through the computation graph and stores each result in the parameter's `.grad` attribute.
