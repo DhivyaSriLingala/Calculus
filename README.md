@@ -2,7 +2,7 @@
 
 ![Day 3 - Calculus and Gradient Descent](Day-3.png)
 
-Day 1 introduced how data is structured through linear algebra, and Day 2 explored uncertainty through probability. Day 3 focuses on the engine behind machine learning: **how a model learns from its mistakes and improves its predictions**.
+Today, it focuses on the engine behind machine learning: **how a model learns from its mistakes and improves its predictions**.
 
 A model begins with initial weights, makes predictions, measures its error, and adjusts those weights. Calculus tells the model which adjustments will reduce the error.
 
